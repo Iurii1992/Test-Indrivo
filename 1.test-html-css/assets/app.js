@@ -1,8 +1,15 @@
-const getMenu = document.querySelector('.menu');
-const getMenuLinks = document.querySelectorAll('.menu__item');
+const getMenu = document.querySelectorAll('.menu__item');
+const getFonts = document.querySelectorAll('.fonts-item');
 
-getMenu.addEventListener('click', (event) => {
-  const target = event.target;
-  getMenuLinks.forEach(el => el.classList.remove('menu__item--active'));
-  target.classList.add('menu__item--active');
-})
+const activeBlock = (arr, i) => {
+  arr.forEach( item => {
+		item.forEach(i => {i.classList.remove('is-active')})
+		item[i].classList.add('is-active')
+	})
+}
+
+for(let i in getMenu) {
+	getMenu[i].addEventListener('click', () => {
+		activeBlock([getMenu, getFonts], i)
+	})
+}

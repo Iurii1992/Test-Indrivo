@@ -57,7 +57,7 @@ body {
 .menu__item:hover{
   opacity: 1;
 }
-.menu__item--active{
+.menu__item.is-active{
   opacity: 1;
   color: #FE530C;
 }
@@ -71,10 +71,14 @@ body {
   margin: 0 20px;
   font-size: 1.2rem;
 }
-#buy-fonts{
-  display: flex;
+.fonts-item{
+  display: none;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
+}
+.fonts-item.is-active{
+  display: flex;
 }
 .container{
   width: 100%;
@@ -93,6 +97,9 @@ body {
   display: flex;
   align-items: center;
   margin: 0 0 30px 0;
+}
+.definition--small:last-child{
+  margin: 0
 }
 .definition--small .definition__logo,
 .definition--large .definition__logo{
@@ -169,10 +176,12 @@ body {
   .menu{
     margin: 20px 0;
   }
-  #buy-fonts{
-    flex-direction: row;
+  .fonts{
     padding: 50px;
     margin: 0;
+  }
+  .fonts-item{
+    flex-direction: row;
   }
   .container{
     width: 60%;
