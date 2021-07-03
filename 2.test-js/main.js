@@ -1,10 +1,7 @@
 const array = [10, 15, 18, 24, 38];
 
 const findBestMatch = (number, arr) => {
-  const difference = arr.map(el => Math.abs(el - number))
-  const min = Math.min(...difference)
-
-  return arr[difference.indexOf(min)]
+  return arr.reduce((prev, curr) => Math.abs(curr - number) < Math.abs(prev - number) ? curr : prev);
 }
 
 console.log(findBestMatch(20, array))
